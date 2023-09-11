@@ -1,18 +1,16 @@
+
 import { ethers } from "hardhat";
 
 async function main() {
+  const myNFT = await ethers.deployContract("MyNFT", []);
 
+  await myNFT.waitForDeployment();
 
-    const NFT= await ethers.deployContract("NFT",["0xfc4e42e49ba01613571333B7E10177D991a1A43e","ipfs://QmPXjXLePXBSZDH8GWRL9ywHqkFDHKq6SY1JSBk8ZxHndZ "]);
-
-    await NFT.waitForDeployment();
-
-
-  console.log(NFT.target)
-    
+  console.log(myNFT.target);
 }
 
-
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;

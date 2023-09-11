@@ -1,5 +1,3 @@
 module.exports = [
-    [
-      "0xfc4e42e49ba01613571333B7E10177D991a1A43e","ipfs://QmPXjXLePXBSZDH8GWRL9ywHqkFDHKq6SY1JSBk8ZxHndZ"
-    ],
+      "0x08dc7b8607AF8759ceb2Cd248B9d4e90A1a505DC","ipfs://QmPXjXLePXBSZDH8GWRL9ywHqkFDHKq6SY1JSBk8ZxHndZ"
   ]

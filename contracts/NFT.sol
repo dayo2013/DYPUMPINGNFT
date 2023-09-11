@@ -1,17 +1,17 @@
+
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.19;
-import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+pragma solidity ^0.8.9;
 
-contract NFT is ERC721{
-     string BASEURL;
-    constructor(address to,string memory url) ERC721("DY","PUMP"){
-        _mint (to, 1);
-         BASEURL = url;
-    }
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-    function _baseURI() internal view override returns (string memory) {
-        return BASEURL;
-    }
-
-
+contract MyNFT is ERC721URIStorage,Ownable{
+    uint _tokenId;
+    constructor() ERC721("DYPUMPING","DY"){}
+    function mint(address _to ,string calldata _uri) external onlyOwner{
+            _tokenId++;
+            _mint(_to,_tokenId);
+            _setTokenURI(_tokenId, _uri);
+        }
+   
 }

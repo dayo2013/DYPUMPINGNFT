@@ -1,15 +1,16 @@
+
 import { ethers } from "hardhat";
 
 async function main() {
   const [signer] = await ethers.getSigners();
-  const NFT = await ethers.getContractAt(
+  const myNFT = await ethers.getContractAt(
     "IMint",
-    "0x453Be919B1a2e738fEbA95fb4A29E649587FeB90"
+    "0xa2F95990510861f2F796bb2c2006EB7582Eb3b58"
   );
 
-  await NFT.mint(
+  await myNFT.mint(
     signer.address,
-    "ipfs://QmPXjXLePXBSZDH8GWRL9ywHqkFDHKq6SY1JSBk8ZxHndZ"
+    "ipfs://QmNNfazCgF9KaksgR5yZmDCMHQrBizgt7BnoFz8VYLwWf2"
   );
 }
 
